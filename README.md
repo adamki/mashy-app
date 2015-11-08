@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/adamki/mashy-app.png?label=ready&title=Ready)](https://waffle.io/adamki/mashy-app)
 ### Mashy App
 
 Project Description
