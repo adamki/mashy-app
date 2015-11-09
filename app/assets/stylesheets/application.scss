@@ -1,5 +1,21 @@
 @import "materialize/components/color";
-$primary-color: color("black", "lighten-2") !default;
+$primary-color: color("teal", "accent-1") !default;
 @import 'materialize';
 @import 'background-image';
-@import 'main-logo';
+@import 'header';
+
+#center-horizontal{
+  margin-top: 150px;
+}
+
+.s6, .s3{
+  height: 250px;
+}
+
+.s6 {
+  opacity: 0.8;
+  background-color: white;
+  i,input, label {
+    margin-top: 30px;
+  }
+}
