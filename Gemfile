@@ -20,8 +20,10 @@ gem 'omniauth-twitter'
 gem 'rails_12factor'
 
 group :development, :test do
+  gem 'pry'
   gem 'byebug'
   gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'simplecov'
 end
 
