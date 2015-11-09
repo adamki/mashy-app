@@ -9,14 +9,20 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'puma'
+
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'materialize-sass'
+
 gem "figaro"
-gem 'puma'
 gem 'omniauth-twitter'
+
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'byebug'
+  gem 'better_errors'
+  gem 'simplecov'
 end
 
 group :development do
@@ -27,4 +33,5 @@ end
 group :test do
   gem 'capybara'
   gem 'launchy'
+  gem 'vcr'
 end
