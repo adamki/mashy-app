@@ -1,29 +1,5 @@
 @import "materialize/components/color";
-$primary-color: color("blue", "lighten-2") !default;
+$primary-color: color("black", "lighten-2") !default;
 @import 'materialize';
-
-#water {
-  width: 900px;
-
-}
-
-body {
-  background: url("https://s3.amazonaws.com/mashy-app/photo-1443527216320-7e744084f5a7.jpeg") no-repeat center center fixed;
-
-  // background: url("https://s3.amazonaws.com/mashy-app/rain.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-body:before {
-    content: " ";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    background: -webkit-radial-gradient(top center, ellipse cover, rgba(255,255,255,0.6) 0%,rgba(0,0,0,0.5) 100%);
-}
+@import 'background-image';
+@import 'main-logo';
