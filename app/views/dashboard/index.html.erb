@@ -1,15 +1,14 @@
 <div class="row" id ="center-horizontal">
-  <div class="col s3">
+  <div class="col l3 s1">
     <!--filler -->
   </div>
     <% if current_user %>
-      <div class="input-field col s6 z-depth-5">
-        <i class="material-icons prefix">search</i>
-        <input id="icon_prefix" type="text" class="validate">
-        <label for="icon_prefix">Search</label>
+      <div class="input-field col l6 s10 z-depth-5 center">
+        <input id="icon_prefix" type="text" class="validate" placeholder="Search for a Startup..."><br/>
+        <a class="btn-floating btn-small waves-effect waves-light red z-depth-2"><i class="material-icons">search</i></a>
       </div>
     <% end %>
-  <div class="col s3">
+  <div class="col l3 s1">
     <!-- filler -->
   </div>
 </div>

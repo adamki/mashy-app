@@ -1,7 +1,9 @@
 body {
-  background: url("https://s3.amazonaws.com/mashy-app/photo-1443527216320-7e744084f5a7.jpeg") no-repeat center center fixed;
-
-  // background: url("https://s3.amazonaws.com/mashy-app/rain.jpg") no-repeat center center fixed;
+  // background: url("https://s3.amazonaws.com/mashy-app/photo-1443527216320-7e744084f5a7.jpeg") no-repeat center center fixed;
+// https://s3.amazonaws.com/mashy-app/2015-03-Life-of-Pix-free-stock-photos-Cloud-plane-trip-dream-blue-Sarah-Babineau.jpg
+// https://s3.amazonaws.com/mashy-app/2015-11-Life-of-Pix-free-stock-photos-grass-macro-drops-grzegorzmleczev.jpeg
+// https://s3.amazonaws.com/mashy-app/2015-11-Life-of-Pix-free-stock-photos-particles-abstract-texture-grzegorzmleczev.jpeg
+  background: url("https://s3.amazonaws.com/mashy-app/2015-11-Life-of-Pix-free-stock-photos-grass-macro-drops-grzegorzmleczev.jpeg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -9,12 +11,12 @@ body {
 }
 
 body:before {
-    content: " ";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    background: -webkit-radial-gradient(top center, ellipse cover, rgba(255,255,255,0.6) 0%,rgba(0,0,0,0.5) 100%);
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background: -webkit-radial-gradient(top center, ellipse cover, rgba(100,100,100,0.8) 0%,rgba(100,100,100,0.2) 100%);
 }
