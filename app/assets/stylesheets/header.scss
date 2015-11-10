@@ -1,12 +1,12 @@
+
 i.large.material-icons {
   opacity: 0.7;
-  font-size: 4em;
 }
 
 .nav-wrapper{
   padding: 30px 50px;
   a{
-    color:#a7ffeb;
+    color:$primary-color;
   }
   li:hover{
     background-color: rgba(255,255,255,0.0);

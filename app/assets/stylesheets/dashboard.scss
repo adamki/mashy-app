@@ -1,3 +1,41 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+// search bar/box
+#center-horizontal{
+  margin-top: 150px;
+}
+
+.l6,.l3{
+  height: 190px;
+}
+
+.l6{
+  opacity: 0.9;
+  background-color: #fff;
+  border-bottom: 5px $primary-color solid;
+  input, label {
+    margin-top: 30px;
+    text-align: center;
+  }
+  input{
+    max-width: 60%;
+  }
+  &:hover{
+    background-color: #fafafa;
+  }
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid $primary-color;
+  box-shadow: 0 1px 0 0 $primary-color;
+}
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid $primary-color;
+  box-shadow: 0 1px 0 0 $primary-color;
+}
