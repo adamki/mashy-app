@@ -7,7 +7,7 @@
   <div class="col l6 s10 z-depth-5 center">
     <ul class="collection">
     <% @spotify_service.find_playlists[:items].each do |playlist| %>
-      <li class="collection-item"><%= playlist[:name] %></li>
+      <li class="collection-item"><%= playlist[:name] %> by: <%= playlist[:owner][:id]%></li>
     <% end  %>
     </ul>
     <a class="btn-floating btn-small waves-effect waves-light red z-depth-2"><i class="material-icons">add</i></a>
