@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rspotify'
 gem 'puma'
+gem 'hurley'
 
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'materialize-sass'
