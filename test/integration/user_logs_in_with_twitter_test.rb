@@ -11,7 +11,7 @@ class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
   test "logging in" do
     visit "/"
     assert_equal 200, page.status_code
-    click_link "Login"
+    click_link "Sign in with Spotify"
     assert_equal "/", current_path
     assert_equal 200, page.status_code
   end
@@ -22,17 +22,16 @@ class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
     # then, provide a set of fake oauth data that
     # omniauth will use when a user tries to authenticate:
     OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
-      provider: 'twitter',
-      extra: {
-        raw_info: {
-          user_id: "1234",
-          name: "Horace",
-          screen_name: "worace",
-        }
-      },
+      uid: nil,
+      provider: "spotify",
       credentials: {
-        token: "pizza",
-        secret: "secretpizza"
+        refresh_token: "2ffddso30345",
+        token: "1234432048u32tfdsa5"
+      },
+      info: {
+        display_name: "Adam Ki Jensen",
+        email: "adajensen@gmail.com",
+        id: "124295125"
       }
     })
   end

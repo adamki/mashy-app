@@ -1,11 +1,17 @@
 <div class="row" id ="center-horizontal">
   <div class="col l3 s1">
-    <!--filler -->
+    <ul class="collection">
+      <li class="collection-item">Alvin</li>
+      <li class="collection-item">Alvin</li>
+      <li class="collection-item">Alvin</li>
+      <li class="collection-item">Alvin</li>
+    </ul>
   </div>
     <% if current_user %>
       <div class="input-field col l6 s10 z-depth-5 center">
         <input id="icon_prefix" type="text" class="validate" placeholder="Search for a Startup..."><br/>
         <a class="btn-floating btn-small waves-effect waves-light red z-depth-2"><i class="material-icons">search</i></a>
+        <%= current_user%>
       </div>
     <% end %>
   <div class="col l3 s1">

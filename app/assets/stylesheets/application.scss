@@ -4,3 +4,7 @@ $primary-color: color("lime", "lighten-1") !default;
 @import 'background-image';
 @import 'header';
 @import 'dashboard';
+
+.collection-item{
+  border: 1px orage solid;
+}
