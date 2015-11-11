@@ -1,13 +1,18 @@
 <div class="row" id ="center-horizontal">
+  <% if current_user %>
+  <h3 class ="center"><%= current_user.name%>'s PlayLists</h3>
   <div class="col l3 s1">
-    <!--filler -->
+    <!-- filler -->
   </div>
-    <% if current_user %>
-      <div class="input-field col l6 s10 z-depth-5 center">
-        <input id="icon_prefix" type="text" class="validate" placeholder="Search for a Startup..."><br/>
-        <a class="btn-floating btn-small waves-effect waves-light red z-depth-2"><i class="material-icons">search</i></a>
-      </div>
-    <% end %>
+  <div class="col l6 s10 z-depth-5 center">
+    <ul class="collection">
+    <% @spotify_service.find_playlists[:items].each do |playlist| %>
+      <li class="collection-item"><%= playlist[:name] %></li>
+    <% end  %>
+    </ul>
+    <a class="btn-floating btn-small waves-effect waves-light red z-depth-2"><i class="material-icons">add</i></a>
+  </div>
+  <% end %>
   <div class="col l3 s1">
     <!-- filler -->
   </div>
