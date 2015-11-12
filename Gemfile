@@ -12,6 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rspotify'
 gem 'puma'
 gem 'hurley'
+gem 'nokogiri'
+gem 'echonest-ruby-api'
 
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'materialize-sass'
