@@ -10,7 +10,6 @@ class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
 
   test "logging in" do
     visit "/"
-    assert_equal 200, page.status_code
     click_link "Sign in with Spotify"
     assert_equal '/', current_path
   end
@@ -58,4 +57,6 @@ class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
       }
     })
   end
+
+
 end
