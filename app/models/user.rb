@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   def self.from_omniauth(auth_info)
     user = find_or_create_by(spotify_id: auth_info[:info][:id])
     user.update_attributes(
