@@ -12,8 +12,7 @@ class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
     visit "/"
     assert_equal 200, page.status_code
     click_link "Sign in with Spotify"
-    assert_equal "/", current_path
-    assert_equal 200, page.status_code
+    assert_equal '/', current_path
   end
 
   def stub_omniauth
@@ -21,17 +20,41 @@ class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
     OmniAuth.config.test_mode = true
     # then, provide a set of fake oauth data that
     # omniauth will use when a user tries to authenticate:
-    OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
-      uid: nil,
-      provider: "spotify",
-      credentials: {
-        refresh_token: "2ffddso30345",
-        token: "1234432048u32tfdsa5"
+    OmniAuth.config.mock_auth[:spotify] = OmniAuth::AuthHash.new({
+      :provider => "spotify",
+      :uid => "1111111111",
+      :info => {
+        :id => "1",
+        :name => "Claudio Poli",
+        :nickname => 'SomeName',
+        :display_name => "the klaus",
+        :email => "claudio@icorete.ch"
       },
-      info: {
-        display_name: "Adam Ki Jensen",
-        email: "adajensen@gmail.com",
-        id: "124295125"
+      :credentials => {
+        :token => "xxxx",
+        :refresh_token => "xxxx"
+      },
+      :extra => {
+        :raw_info => {
+          :country => "IT",
+          :display_name => "Claudio Poli",
+          :email => "claudio@icorete.ch",
+          :external_urls => {
+            :spotify => "https://open.spotify.com/user/1111111111"
+          },
+          :href => "https://api.spotify.com/v1/users/1111111111",
+          :id => "1111111111",
+          :images => [
+            {
+              "height" => nil,
+              "url" => "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/t1.0-1/s320x320/301234_1962753760624_625151598_n.jpg",
+              "width" => nil
+            }
+          ],
+          :product => "open",
+          :type => "user",
+          :uri => "spotify:user:1111111111"
+        }
       }
     })
   end
