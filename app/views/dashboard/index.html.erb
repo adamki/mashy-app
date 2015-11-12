@@ -1,19 +1,24 @@
 <div class="row" id ="center-horizontal">
+
   <% if current_user %>
-  <h3 class ="center"><%= current_user.name%>'s PlayLists</h3>
+  <h3 class ="center"><%= current_user.name %>'s PlayLists</h3>
+
   <div class="col l3 s1">
-    <!-- filler -->
   </div>
+
   <div class="col l6 s10 z-depth-5 center">
     <ul class="collection">
-    <% @spotify_service.find_playlists[:items].each do |playlist| %>
-      <li class="collection-item"><%= playlist[:name] %></li>
-    <% end  %>
+      <%= @spotify_service.find_playlists.each do |playlist| %>
+      <li class="collection-item">
+        <%= playlist.name %>
+      </li>
+      <% end %>
     </ul>
-    <a class="btn-floating btn-small waves-effect waves-light red z-depth-2"><i class="material-icons">add</i></a>
+    <%= link_to "", new_playlist_path , class: "btn-floating btn-small waves-effect waves-light red z-depth-2"  %>
+  </div>
+
+  <div class="col l3 s1">
   </div>
   <% end %>
-  <div class="col l3 s1">
-    <!-- filler -->
-  </div>
+
 </div>
