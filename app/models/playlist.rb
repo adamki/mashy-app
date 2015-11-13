@@ -1,14 +1,7 @@
-class Playlist
-  include ActiveModel::Conversion
-  extend  ActiveModel::Naming
+class Playlist < ActiveRecord::Base
+  belongs_to :user
 
   attr_reader :name
 
-  def initialize(name = nil)
-    @name = name
-  end
 
-  def persisted?
-    false
-  end
 end

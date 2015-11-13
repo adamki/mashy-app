@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       session[:auth_info] = request.env["omniauth.auth"]
     end
-    redirect_to root_path
+    redirect_to playlists_path
   end
 
   def destroy
