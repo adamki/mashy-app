@@ -1,19 +1,17 @@
 class SpotifyService
 
-  attr_reader :connection, :user
+  attr_reader :session, :user
 
   def initialize(user, session)
-    @user = RSpotify::User.new(session[:auth_info])
-    # @connection = Hurley::Client.new("https://api.spotify.com/v1/users/#{user.spotify_id}")
-    # connection.header[:authorization] = "Bearer #{user.oauth_token}"
-    # connection.header[:content_type]  = "application/json"
+    @session = session
+    @user = find_user
   end
 
   def find_user
-    parse(connection.get(""))
+    RSpotify::User.new(session[:auth_info])
   end
 
-  def find_playlists
+  def find_users_playlists
     @user.playlists
   end
 
@@ -21,9 +19,16 @@ class SpotifyService
     @user.create_playlist!(name)
   end
 
+  def find_playlist(playlist_id)
+    RSpotify::Playlist.find(@user.id, playlist_id)
+  end
+
+  def find_playlist_tracks(playlist )
+  end
+
   private
 
-  def parse(response)
-    JSON.parse(response.body, symbolize_names: true)
-  end
+    def parse(response)
+      JSON.parse(response.body, symbolize_names: true)
+    end
 end
