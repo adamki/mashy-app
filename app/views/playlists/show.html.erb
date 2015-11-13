@@ -1,3 +1,5 @@
-<% @pl.tracks.each do |track| %>
-  <%= track.name %>
-<%end %>
+<ul>
+  <% @playlist.tracks.each do |track| %>
+    <li><%= track.name %></li>
+  <%end %>
+</ul>

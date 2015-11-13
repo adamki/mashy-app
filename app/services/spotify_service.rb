@@ -19,11 +19,8 @@ class SpotifyService
     @user.create_playlist!(name)
   end
 
-  def find_playlist(playlist_id)
-    RSpotify::Playlist.find(@user.id, playlist_id)
-  end
-
-  def find_playlist_tracks(playlist )
+  def find_playlist(params)
+    RSpotify::Playlist.find(@user.id, params[:id])
   end
 
   private

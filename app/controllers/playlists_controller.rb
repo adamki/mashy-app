@@ -6,8 +6,7 @@ class PlaylistsController < ApplicationController
 
   def show
     spotify_service ||= SpotifyService.new(current_user, session)
-    playlist = params[:id]
-    @pl = spotify_service.find_playlist(playlist)
+    @playlist = spotify_service.find_playlist(params)
   end
 
   def create
