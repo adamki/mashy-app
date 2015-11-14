@@ -14,7 +14,7 @@ $spotify-yellow: #ebd411;
 @import 'background-image';
 @import "navbar";
 
-h1,h2, h3, h4, h5, h6, .text-white {
+h1,h2, h3, h4, h5, h6, p,  .text-white {
   font-weight: 300;
   color: $spotify-white;
 }
@@ -34,16 +34,36 @@ html, body{
 }
 
 .alpha60 {
-    /* Fallback for web browsers that doesn't support RGBa */
-    background: rgb(0, 0, 0);
-    /* RGBa with 0.6 opacity */
-    background: rgba(0, 0, 0, 0.9);
-    /* For IE 5.5 - 7*/
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-    /* For IE 8*/
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+  /* Fallback for web browsers that doesn't support RGBa */
+  background: rgb(0, 0, 0);
+  /* RGBa with 0.6 opacity */
+  background: rgba(0, 0, 0, 0.9);
+  /* For IE 5.5 - 7*/
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+  /* For IE 8*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
 }
 
 nav {
   margin-bottom: 20px;
+}
+
+
+.collection{
+  border: $spotify-grey;
+  color: white;
+  .collection-item{
+    border: $spotify-green;
+    background-color: $spotify-dark-grey;
+    .title {
+      color: $spotify-green;
+    }
+  }
+}
+
+.dropdown-content {
+  background-color: $spotify-black;
+  li > a{
+    color: $spotify-green;
+  }
 }

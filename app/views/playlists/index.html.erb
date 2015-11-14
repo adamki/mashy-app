@@ -7,4 +7,15 @@
       Logged in as:  <%= current_user.name %>
     </div>
   </div>
+
+  <div class="row center">
+    <!-- Dropdown Trigger -->
+    <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Playlists</a>
+    <!-- Dropdown Structure -->
+    <ul id='dropdown1' class='dropdown-content'>
+      <% current_user.playlists.each do |playlist| %>
+        <li><a href="#!"><%=playlist.name.titleize%></a></li>
+      <% end %>
+    </ul>
+  </div>
 </body>

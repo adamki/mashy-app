@@ -1,13 +1,18 @@
 class Playlist < ActiveRecord::Base
   belongs_to :user
+  has_many :tracks
 
-  def self.save(tester)
-    playlist = find_or_create_by(spotify_id: tester.id)
+  def self.save(playlist_data)
+    playlist = find_or_create_by(spotify_id: playlist_data.id)
     playlist.update_attributes(
-      name: tester.name,
-      spotify_id: tester.id,
-      owner: tester.owner.id,
+      name: playlist_data.name,
+      spotify_id: playlist_data.id,
+      owner: playlist_data.owner.id,
+      image_url: playlist_data.images,
+      external_url: playlist_data.href,
+
     )
+    # playlist_data.images.first["url"]
     playlist
   end
 end
