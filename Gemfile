@@ -14,6 +14,7 @@ gem 'puma'
 gem 'hurley'
 gem 'nokogiri'
 gem 'echonest-ruby-api'
+gem 'responders', '~> 2.0'
 
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'materialize-sass'
