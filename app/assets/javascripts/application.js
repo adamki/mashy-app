@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require semantic-ui
 //= require materialize-sprockets
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .

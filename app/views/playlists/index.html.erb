@@ -7,21 +7,15 @@
       Logged in as:  <%= current_user.name %>
     </div>
   </div>
-  <div class="row">
 
-    <div class="col m9 s12">
-      <ul class="collection">
-        <% current_user.playlists.each do |playlist|%>
-        <li class="collection-item avatar">
-          <img src="images/yuna.jpg" alt="" class="circle">
-          <span class="title"> <%= playlist.name.titleize %> </span>
-          <p> <%= playlist.owner %> <br>
-             external playlist
-          </p>
-          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-        </li>
-        <% end  %>
-      </ul>
-    </div>
+  <div class="row center">
+    <!-- Dropdown Trigger -->
+    <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Playlists</a>
+    <!-- Dropdown Structure -->
+    <ul id='dropdown1' class='dropdown-content'>
+      <% current_user.playlists.each do |playlist| %>
+        <li><a href="#!"><%=playlist.name.titleize%></a></li>
+      <% end %>
+    </ul>
   </div>
 </body>
