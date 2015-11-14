@@ -1,1 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: adam
+  provider: spotify
+  spotify_id: 213456
+  email: adam@spotify.com
+  name: adamcuppycake
+  oauth_token:  123123423rtedsa
+  refresh_token:  234564754y4rwgsbffgrht45364
