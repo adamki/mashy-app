@@ -12,6 +12,7 @@ class SpotifyService
   end
 
   def find_users_playlists
+    
     playlists = @user.playlists
 
     # take all playlists,
