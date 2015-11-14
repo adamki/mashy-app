@@ -1,5 +1,6 @@
 class Playlist < ActiveRecord::Base
   belongs_to :user
+  has_many :tracks
 
   def self.save(tester)
     playlist = find_or_create_by(spotify_id: tester.id)
