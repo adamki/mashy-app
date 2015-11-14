@@ -1,28 +1,51 @@
 {
   "MiniTest": {
     "coverage": {
-      "/Users/adamjensen/Turing/m3/w5/mashy-app/app/models/user.rb": [
-        1,
-        null,
-        1,
+      "/Users/adamjensen/Turing/m3/w5/mashy-app/app/models/playlist.rb": [
         1,
         1,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        0,
         null,
         null
       ],
-      "/Users/adamjensen/Turing/m3/w5/mashy-app/app/controllers/dashboard_controller.rb": [
+      "/Users/adamjensen/Turing/m3/w5/mashy-app/app/models/user.rb": [
         1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null
+      ],
+      "/Users/adamjensen/Turing/m3/w5/mashy-app/app/controllers/api/v1/playlists_controller.rb": [
+        1,
+        1,
+        null,
         1,
         2,
+        2,
+        null,
+        null,
+        1,
+        1,
         null,
         null
       ],
@@ -35,7 +58,7 @@
         1,
         null,
         1,
-        7,
+        0,
         null,
         null
       ],
@@ -43,7 +66,7 @@
         1,
         null
       ],
-      "/Users/adamjensen/Turing/m3/w5/mashy-app/app/helpers/dashboard_helper.rb": [
+      "/Users/adamjensen/Turing/m3/w5/mashy-app/app/helpers/api/v1/playlists_helper.rb": [
         1,
         null
       ],
@@ -51,54 +74,11 @@
         1,
         null
       ],
-      "/Users/adamjensen/Turing/m3/w5/mashy-app/app/controllers/sessions_controller.rb": [
+      "/Users/adamjensen/Turing/m3/w5/mashy-app/app/helpers/welcome_helper.rb": [
         1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null
-      ],
-      "/Users/adamjensen/Turing/m3/w5/mashy-app/app/services/spotify_service.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        null,
-        1,
-        0,
-        null,
         null
       ]
     },
-    "timestamp": 1447314367
+    "timestamp": 1447485110
   }
 }
