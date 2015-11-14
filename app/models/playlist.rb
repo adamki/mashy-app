@@ -8,5 +8,6 @@ class Playlist < ActiveRecord::Base
       spotify_id: tester.id,
       owner: tester.owner.id,
     )
+    playlist
   end
 end
