@@ -15,6 +15,7 @@ gem 'hurley'
 gem 'nokogiri'
 gem 'echonest-ruby-api'
 gem 'responders', '~> 2.0'
+gem "active_model_serializers", github: "rails-api/active_model_serializers"
 
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'materialize-sass'
