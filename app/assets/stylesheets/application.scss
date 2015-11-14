@@ -1,10 +1,49 @@
 @import "materialize/components/color";
-$primary-color: color("lime", "lighten-1") !default;
+$primary-color: color("blue-grey", "darken-4") !default;
+
+$spotify-green: #82b919;
+$spotify-black: #000000;
+$spotify-dark-grey: #262626;
+$spotify-grey: #999999;
+$spotify-white: #ffffff;
+$spotify-orange: #ff6000;
+$spotify-red: #f25555;
+$spotify-yellow: #ebd411;
+
 @import 'materialize';
 @import 'background-image';
-@import 'header';
-@import 'dashboard';
+@import "navbar";
 
-h1,h2, h3, h4, h5, h6 {
+h1,h2, h3, h4, h5, h6, .text-white {
   font-weight: 300;
+  color: $spotify-white;
+}
+
+.filler{
+  content: " ";
+  height: 10px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+html, body{
+  height: 100%;
+  background-color: $spotify-dark-grey;
+}
+
+.alpha60 {
+    /* Fallback for web browsers that doesn't support RGBa */
+    background: rgb(0, 0, 0);
+    /* RGBa with 0.6 opacity */
+    background: rgba(0, 0, 0, 0.9);
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+
+nav {
+  margin-bottom: 20px;
 }

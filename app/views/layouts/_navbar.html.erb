@@ -1,0 +1,10 @@
+<nav>
+  <div class="nav-wrapper alpha60">
+    <a href = "/" class="brand-logo">Mashy</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <% if current_user %>
+        <li id="logout"> <%= link_to "Logout", logout_path%> </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
