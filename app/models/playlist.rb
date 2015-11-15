@@ -10,7 +10,6 @@ class Playlist < ActiveRecord::Base
       owner: playlist_data.owner.id,
       image_url: playlist_data.images,
       external_url: playlist_data.href,
-
     )
     playlist
   end

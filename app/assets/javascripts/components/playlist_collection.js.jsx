@@ -15,20 +15,20 @@ var PlaylistCollection = React.createClass({
     });
   },
   showPlaylistHandler: function(playlist, event){
-    var spotify_id = playlist.spotify_id
+    var spotify_id = playlist.spotify_id;
     $.ajax({
       url: '/api/v1/playlists/' + spotify_id,
       type: 'GET',
       success: function(response){
-        this.setState({playlist: response})
+        this.setState({playlist: response});
       }.bind(this)
     });
     this.setState({
       showPlaylist: !this.state.showPlaylist
-    })
+    });
   },
   getTrackHandler: function(playlist){
-    console.log({playlist});
+    console.log({ playlist });
   },
   render: function(){
     return(
@@ -40,7 +40,7 @@ var PlaylistCollection = React.createClass({
                                               getTrack={this.getTrackHandler}
                                     /> : null}
       </div>
-    )
+    );
   }
 });
 
@@ -48,7 +48,7 @@ var AllPlaylists = React.createClass({
   render: function(){
     var playlistName = this.props.playlists.map(function(playlist, index){
       return(
-        <li key={playlist.id}>
+        <li key={playlist.id} className="collection-item">
           <a onClick={this.props.getPlaylist.bind(null, playlist)} value={playlist.id}>
             {playlist.name}
           </a>
@@ -57,7 +57,9 @@ var AllPlaylists = React.createClass({
     }.bind(this));
     return(
       <div className="playlistBox">
-        {playlistName}
+        <ul className="collection">
+          {playlistName}
+        </ul>;
       </div>
     );
   }

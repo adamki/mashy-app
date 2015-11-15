@@ -11,21 +11,16 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rspotify'
 gem 'puma'
-gem 'hurley'
-gem 'nokogiri'
-gem 'echonest-ruby-api'
-gem 'responders', '~> 2.0'
-gem "active_model_serializers", github: "rails-api/active_model_serializers"
 gem 'react-rails', '~> 1.4.0'
-gem 'faraday', '~> 0.9.2'
-
-gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'rails_12factor'
 gem 'materialize-sass'
 
 gem "figaro"
+gem 'echonest-ruby-api'
 gem 'omniauth-twitter'
+gem 'responders', '~> 2.0'
+gem "active_model_serializers", github: "rails-api/active_model_serializers"
 
-gem 'rails_12factor'
 
 group :development, :test do
   gem 'pry-rails'

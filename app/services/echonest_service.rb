@@ -17,9 +17,4 @@ class EchonestService
     @song_connection.search(params)
   end
 
-  private
-
-  def parse(response)
-    JSON.parse(response.body, symbolize_names: true)
-  end
 end
