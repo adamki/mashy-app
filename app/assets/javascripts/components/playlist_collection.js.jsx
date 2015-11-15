@@ -1,6 +1,6 @@
 var PlaylistCollection = React.createClass({
   getInitialState: function() {
-    return {playlists: [] };
+    return { playlists: [], showPlaylist: false, playlist: {} };
   },
   componentDidMount: function() {
     $.ajax({
@@ -11,25 +11,40 @@ var PlaylistCollection = React.createClass({
       }.bind(this)
     });
   },
+  showPlaylistDetails: function(playlist, event){
+    var spotify_id = playlist.spotify_id
+    console.log(spotify_id)
+    $.ajax({
+      url: '/api/v1/playlists/' + spotify_id,
+      type: 'GET',
+      success: function(response){
+        this.setState({playlist: response})
+      }.bind(this)
+    });
+    this.setState({
+      showPlaylist: true
+    })
+  },
   render: function(){
     return(
       <div className="playlistsBox">
         <h1>Playlists</h1>
-        <PlaylistsBox playlists={this.state.playlists} />
+        <PlaylistsBox playlists={this.state.playlists} showPlaylist={this.showPlaylistDetails}/>
+        {this.state.showPlaylist ? <PlaylistDetails playlist={this.state.playlist}/> : null}
       </div>
     )
   }
 });
 
 var PlaylistsBox = React.createClass({
-  displayMore: function(event){
-    console.log("fdsafdsa");
-  },
+  // handleClick: function(){
+  //   this.props.showPlaylist.bind(null, this)
+  // },
   render: function(){
-    var playlistNodes = this.props.playlists.map(function(playlist){
+    var playlistName = this.props.playlists.map(function(playlist, index){
       return(
-        <li>
-          <a onClick={this.displayMore} >
+        <li key={playlist.id}>
+          <a onClick={this.props.showPlaylist.bind(null, playlist)} value={playlist.id}>
             {playlist.name}
           </a>
         </li>
@@ -37,7 +52,20 @@ var PlaylistsBox = React.createClass({
     }.bind(this));
     return(
       <div className="playlistBox">
-        {playlistNodes}
+        {playlistName}
+      </div>
+    );
+  }
+});
+
+var PlaylistDetails = React.createClass({
+  render: function(){
+    return(
+      <div className="playlist-details">
+        <h3>{this.props.playlist.name}</h3>
+        <h5>{this.props.playlist.owner}</h5>
+
+
       </div>
     );
   }
