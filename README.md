@@ -13,7 +13,7 @@ Mashy provides provides a simple webapp interface that allows a user to gain ins
 
 ### Problem
 
-Much of the Startup research I have tried to do has been pretty scattered and/or displayed in a way that I don't like. I decided to build a central tool that will give me the details I am most interested about.
+Playlists need to be analyzed. It is an interesting take to try and use technology to analyze a song's tempo and feeling instead of audio perception and feeling. 
 
 ### Solution
 
@@ -47,4 +47,3 @@ A good project idea should:
 * Break down into logical iterations so that you can deliver a strong product on every checkin
 * Be something that real people would want to use to solve a problem
 * Have enough technical challenge to be worth your time (as opposed to a content challenge)
-
