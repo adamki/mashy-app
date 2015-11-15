@@ -1,16 +1,44 @@
 var PlaylistCollection = React.createClass({
   getInitialState: function() {
-    return {value: 'Playlists'}
+    return {playlists: [] };
   },
-  onButtonBoxClick: function() {
-    this.setState({value: "You clicked a button, and here I am all of a sudden."});
+  componentDidMount: function() {
+    $.ajax({
+      url: '/api/v1/playlists.json',
+      type: 'GET',
+      success: function(response) {
+        this.setState({playlists: response});
+      }.bind(this)
+    });
   },
-  render: function() {
-    return (
-      <div className='dashboard'>
-        <h1>click here</h1>
-        <ButtonBox onButtonClick={this.onButtonBoxClick} />
+  render: function(){
+    return(
+      <div className="playlistsBox">
+        <h1>Playlists</h1>
+        <PlaylistsBox playlists={this.state.playlists} />
       </div>
     )
   }
-})
+});
+
+var PlaylistsBox = React.createClass({
+  displayMore: function(event){
+    console.log("fdsafdsa");
+  },
+  render: function(){
+    var playlistNodes = this.props.playlists.map(function(playlist){
+      return(
+        <li>
+          <a onClick={this.displayMore} >
+            {playlist.name}
+          </a>
+        </li>
+      );
+    }.bind(this));
+    return(
+      <div className="playlistBox">
+        {playlistNodes}
+      </div>
+    );
+  }
+});
