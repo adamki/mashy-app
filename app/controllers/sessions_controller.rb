@@ -4,9 +4,12 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       session[:auth_info] = request.env["omniauth.auth"]
 
-      playlists = SpotifyService.new(current_user, session).find_users_playlists
+      spotify_service = SpotifyService.new(current_user, session)
+      playlists = spotify_service.find_users_playlists
+
       playlists.each do |playlist|
-        current_user.playlists << Playlist.save(playlist)
+        spotify_service.get_tracks(playlist)
+        Playlist.save(playlist)
       end
     end
     redirect_to playlists_path

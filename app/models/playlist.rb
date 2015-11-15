@@ -12,7 +12,8 @@ class Playlist < ActiveRecord::Base
       external_url: playlist_data.href,
 
     )
-    # playlist_data.images.first["url"]
     playlist
   end
+
+
 end
