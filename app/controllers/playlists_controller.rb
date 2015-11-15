@@ -2,6 +2,8 @@ class PlaylistsController < ApplicationController
 
   def index
     @spotify_service ||= SpotifyService.new(current_user, session) if current_user
+    @sc = EchonestService.new
+
   end
 
   def show

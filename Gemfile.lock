@@ -264,6 +264,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   echonest-ruby-api
+  faraday (~> 0.9.2)
   figaro
   hurley
   jbuilder (~> 2.0)
