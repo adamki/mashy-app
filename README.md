@@ -9,11 +9,11 @@ The project requirements are explained [here](https://github.com/turingschool/le
 
 ### Pitch
 
-Mashy provides provides a simple webapp interface that allows a user to gain insight for any startup.
+View your Playlists from another perspective.
 
 ### Problem
 
-Playlists need to be analyzed. It is an interesting take to try and use technology to analyze a song's tempo and feeling instead of audio perception and feeling. 
+Playlists need to be analyzed. It is an interesting take to try and use technology to analyze a song's tempo and feeling instead of audio perception and feeling.
 
 ### Solution
 
@@ -21,7 +21,7 @@ Mashy App focuses on UI/UX and data collection across multiple API's.
 
 ### Target Audience
 
-Investors. Developers. Thinkers, Tinkerers. Comsumers
+Investors. Developers. Thinkers, Tinkerers. Consumers
 
 ### Integrations
 
