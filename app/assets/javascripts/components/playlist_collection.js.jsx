@@ -1,6 +1,9 @@
 var PlaylistCollection = React.createClass({
   getInitialState: function() {
-    return { playlists: [], showPlaylist: false, playlist: {} };
+    return { playlists: [],
+          showPlaylist: false,
+              playlist: {},
+            showtracks: false };
   },
   componentDidMount: function() {
     $.ajax({
@@ -11,9 +14,8 @@ var PlaylistCollection = React.createClass({
       }.bind(this)
     });
   },
-  showPlaylistDetails: function(playlist, event){
+  showPlaylistHandler: function(playlist, event){
     var spotify_id = playlist.spotify_id
-    console.log(spotify_id)
     $.ajax({
       url: '/api/v1/playlists/' + spotify_id,
       type: 'GET',
@@ -22,29 +24,32 @@ var PlaylistCollection = React.createClass({
       }.bind(this)
     });
     this.setState({
-      showPlaylist: true
+      showPlaylist: !this.state.showPlaylist
     })
+  },
+  getTrackHandler: function(playlist){
+    console.log({playlist});
   },
   render: function(){
     return(
       <div className="playlistsBox">
         <h1>Playlists</h1>
-        <PlaylistsBox playlists={this.state.playlists} showPlaylist={this.showPlaylistDetails}/>
-        {this.state.showPlaylist ? <PlaylistDetails playlist={this.state.playlist}/> : null}
+        <AllPlaylists playlists={this.state.playlists} getPlaylist={this.showPlaylistHandler}/>
+        {this.state.showPlaylist ? <SinglePlaylistBox
+                                              playlist={this.state.playlist}
+                                              getTrack={this.getTrackHandler}
+                                    /> : null}
       </div>
     )
   }
 });
 
-var PlaylistsBox = React.createClass({
-  // handleClick: function(){
-  //   this.props.showPlaylist.bind(null, this)
-  // },
+var AllPlaylists = React.createClass({
   render: function(){
     var playlistName = this.props.playlists.map(function(playlist, index){
       return(
         <li key={playlist.id}>
-          <a onClick={this.props.showPlaylist.bind(null, playlist)} value={playlist.id}>
+          <a onClick={this.props.getPlaylist.bind(null, playlist)} value={playlist.id}>
             {playlist.name}
           </a>
         </li>
@@ -58,14 +63,13 @@ var PlaylistsBox = React.createClass({
   }
 });
 
-var PlaylistDetails = React.createClass({
+var SinglePlaylistBox = React.createClass({
   render: function(){
     return(
       <div className="playlist-details">
         <h3>{this.props.playlist.name}</h3>
         <h5>{this.props.playlist.owner}</h5>
-
-
+        <button onClick={this.props.getTrack.bind(null, this.props)}>Analize this Playlist</button>
       </div>
     );
   }
