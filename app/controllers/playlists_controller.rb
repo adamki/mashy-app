@@ -1,9 +1,10 @@
 class PlaylistsController < ApplicationController
-
   def index
-    @spotify_service ||= SpotifyService.new(current_user, session) if current_user
-    @sc = EchonestService.new
+    @song = EchonestService.new
 
+    @collection = PlaylistCollection.new(current_user, session[:auth_info])
+    @collection.retreive_data
+    @collection.playlists
   end
 
   def show

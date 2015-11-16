@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20151115193006) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "href"
-    t.string   "owner"
     t.string   "playlist_id"
   end
 
