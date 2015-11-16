@@ -5,8 +5,8 @@ var PlaylistCollection = React.createClass({
               playlist: {},
           showPlaylist: false,
             showtracks: false,
-       showEchoResults: false,
-          echoResponse: false};
+            echoPayload:[]
+          };
   },
   componentDidMount: function() {
     $.ajax({
@@ -30,22 +30,34 @@ var PlaylistCollection = React.createClass({
     });
   },
   getEchoHandler: function(playlist){
-    var track_ids = [];
-    playlist.tracks.map(function(track){
-      track_ids.push(track.spotify_id);
-    });
+    // 1. get track ids in array
+    // 2. send them to ajax function
+    // 3. make one ajax call
+    // 4. set the repsonse as state
+    // 5. listen to tha tstate in SPB
+    var collected_id = playlist.tracks.reduce(function(ary, track){
+      ary.push(track.id);
+      return ary;
+    }, []);
 
-    var that = this;
-    var response = track_ids.map(function(id){
+    var echoAjax = function(id){
       $.ajax({
-        url: '/api/v1/tracks/' + id,
+        url:'/api/v1/tracks/' + ids,
         type: 'GET',
         success: function(response){
-          that.setState({echoResponse: response});
-        }.bind(this)
+          this.setState({echoPayload: response});
+        }
       });
-    });
-    // this.setState.echoResponse={response}
+    };
+
+    var collected_responses = collected_id.reduce(function(ary, id){
+      ary.push(echoAjax(id));
+      return ary;
+    }, []);
+
+   // retrieve all the track ids ---> in getEchoHandler() --> retrieveTrackData(ids)
+   // send them one by one to /api/tracks/:id ---> retrieveTrackData(ids) ---> make ajax call with promises (since multiple) --> Rails API endpoint accept a colllection of track IDs
+     // --> response: parse and prepare the response objects, set the state r: response, pass down the updtated state to SinglePlaylistBox
   },
   render: function(){
     return(
@@ -56,9 +68,9 @@ var PlaylistCollection = React.createClass({
                                     /> : null}
         {this.state.showPlaylist ? <SinglePlaylistBox
                                         getEchoResults={this.getEchoHandler}
-                                              playlist={this.state.playlist}
-                                              tracks={this.state.tracks}
-                                              scores={this.state.scores}
+                                        playlist={this.state.playlist}
+                                        tracks={this.state.tracks}
+                                        scores={this.state.scores}
                                     /> : null}
       </div>
     );
@@ -87,11 +99,8 @@ var AllPlaylists = React.createClass({
 });
 
 var SinglePlaylistBox = React.createClass({
-  handleClick: function() {
-    this.props.getEchoResults(this.props);
-    return(
-      console.log(this.props.tracks)
-    );
+  handleClick:function(){
+    this.props.getEchoResults(this.props.playlist);
   },
   render: function(){
     var track_list = this.props.tracks.map(function(track, index){
@@ -104,7 +113,7 @@ var SinglePlaylistBox = React.createClass({
     return(
       <div className="playlist-details">
         <h3>{this.props.playlist.name} by: {this.props.playlist.owner}</h3>
-        <button onClick={this.handleClick}>Analize this Playlist</button>
+        <button onClick={this.handleClick}>Analize this Track</button>
         <ul className="collection with-header" data-collapsible="accordion">
           {track_list}
         </ul>
