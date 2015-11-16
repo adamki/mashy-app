@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151115193006) do
+ActiveRecord::Schema.define(version: 20151116025409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,10 +34,23 @@ ActiveRecord::Schema.define(version: 20151115193006) do
     t.string   "artist"
     t.string   "url"
     t.string   "external_image"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "href"
     t.string   "playlist_id"
+    t.decimal  "energy"
+    t.decimal  "liveness"
+    t.decimal  "tempo"
+    t.decimal  "speechiness"
+    t.decimal  "acousticness"
+    t.decimal  "instrumentalness"
+    t.integer  "mode"
+    t.integer  "time_signature"
+    t.decimal  "duration"
+    t.decimal  "loudness"
+    t.decimal  "audio_md5"
+    t.decimal  "valence"
+    t.decimal  "danceability"
   end
 
   create_table "users", force: :cascade do |t|

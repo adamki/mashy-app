@@ -1,6 +1,5 @@
 class PlaylistsController < ApplicationController
   def index
-    @song = EchonestService.new
 
     @collection = PlaylistCollection.new(current_user, session[:auth_info])
     @collection.retreive_data

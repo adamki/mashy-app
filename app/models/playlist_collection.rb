@@ -23,7 +23,7 @@ class PlaylistCollection
     @playlists.each { |playlist| playlist.tracks }
     @playlists.each do  |list|
       list.tracks.each do |track|
-        Track.save(track, list)
+        track = Track.save(track, list)
       end
     end
   end
