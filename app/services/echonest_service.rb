@@ -17,7 +17,6 @@ class EchonestService
     @song_connection.search(params)
   end
 
-
   private
 
   def parse(response)

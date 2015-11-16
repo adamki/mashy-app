@@ -3,7 +3,7 @@ class Track < ActiveRecord::Base
 
   def self.save(track_data, playlist)
     track = find_or_create_by(spotify_id: track_data.id)
-    echo_results = analyze(track.name, track.artist).first
+    echo_results = analyze(track_data.name, track_data.artists.first.name).first
     track.update_attributes(
       artist: track_data.artists.first.name,
       name: track_data.name,
