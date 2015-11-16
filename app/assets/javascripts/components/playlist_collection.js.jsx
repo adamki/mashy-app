@@ -36,8 +36,9 @@ var PlaylistCollection = React.createClass({
         <AllPlaylists playlists={this.state.playlists} getPlaylist={this.showPlaylistHandler}/>
         {this.state.showPlaylist ? <SinglePlaylistBox
                                               playlist={this.state.playlist}
+                                                tracks={this.state.tracks}
+                                                scores={this.state.scores}
                                               getTrack={this.getTrackHandler}
-                                                 tracks={this.state.tracks}
                                     /> : null}
       </div>
     )
@@ -57,7 +58,9 @@ var AllPlaylists = React.createClass({
     }.bind(this));
     return(
       <div className="playlistBox">
-        {playlistName}
+        <ul>
+          {playlistName}
+        </ul>
       </div>
     );
   }
