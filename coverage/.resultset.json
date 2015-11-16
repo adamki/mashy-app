@@ -4,6 +4,7 @@
       "/Users/adamjensen/Turing/m3/w5/mashy-app/app/models/playlist.rb": [
         1,
         1,
+        1,
         null,
         1,
         0,
@@ -12,7 +13,45 @@
         null,
         null,
         null,
+        null,
+        null,
         0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/adamjensen/Turing/m3/w5/mashy-app/app/models/track.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
         null,
         null
       ],
@@ -58,7 +97,7 @@
         1,
         null,
         1,
-        0,
+        2,
         null,
         null
       ],
@@ -70,6 +109,14 @@
         1,
         null
       ],
+      "/Users/adamjensen/Turing/m3/w5/mashy-app/app/helpers/api/v1/tracks_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/adamjensen/Turing/m3/w5/mashy-app/app/helpers/api/v1/users_helper.rb": [
+        1,
+        null
+      ],
       "/Users/adamjensen/Turing/m3/w5/mashy-app/app/helpers/sessions_helper.rb": [
         1,
         null
@@ -77,8 +124,13 @@
       "/Users/adamjensen/Turing/m3/w5/mashy-app/app/helpers/welcome_helper.rb": [
         1,
         null
+      ],
+      "/Users/adamjensen/Turing/m3/w5/mashy-app/app/serializers/playlist_serializer.rb": [
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1447485110
+    "timestamp": 1447650885
   }
 }
