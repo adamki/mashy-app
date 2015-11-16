@@ -15,5 +15,14 @@ class Playlist < ActiveRecord::Base
     playlist
   end
 
+  def create_playlist!(name)
+    @user.create_playlist!(name)
+  end
+
+  def find_playlist(params)
+    RSpotify::Playlist.find(@user.id, params[:id])
+  end
+
+  
 
 end

@@ -1,38 +1,19 @@
 class SpotifyService
 
-  attr_reader :session, :user
+  attr_reader :auth_info, :spotify_user
 
-  def initialize(user=nil, session=nil)
-    @session = session
-    @user = find_user
+  def initialize(user=nil, auth_info=nil)
+    @auth_info = auth_info
+    @spotify_user = set_user
   end
 
-  def find_user
-    RSpotify::User.new(session[:auth_info])
-  end
-
-  def find_users_playlists
-    playlists = @user.playlists
-  end
-
-  def create_playlist!(name)
-    @user.create_playlist!(name)
-  end
-
-  def find_playlist(params)
-    RSpotify::Playlist.find(@user.id, params[:id])
-  end
-
-  def get_tracks(playlist)
-    tracks = playlist.tracks
-    tracks.each do|track|
-      Track.save(track, playlist)
-    end
+  def set_user
+    RSpotify::User.new(auth_info)
   end
 
   private
 
-    def parse(response)
-      JSON.parse(response.body, symbolize_names: true)
-    end
+  def parse(response)
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
