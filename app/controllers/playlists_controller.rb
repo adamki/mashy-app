@@ -1,9 +1,9 @@
 class PlaylistsController < ApplicationController
   def index
 
-    @collection = PlaylistCollection.new(current_user, session[:auth_info])
-    @collection.retreive_data
-    @collection.playlists
+    # @collection = PlaylistCollection.new(current_user, session[:auth_info])
+    # @collection.retreive_data
+    # @collection.playlists
   end
 
   def show

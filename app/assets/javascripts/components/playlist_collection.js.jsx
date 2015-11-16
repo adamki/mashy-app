@@ -1,8 +1,9 @@
 var PlaylistCollection = React.createClass({
   getInitialState: function() {
     return { playlists: [],
-          showPlaylist: false,
+                tracks: [],
               playlist: {},
+          showPlaylist: false,
             showtracks: false };
   },
   componentDidMount: function() {
@@ -20,15 +21,13 @@ var PlaylistCollection = React.createClass({
       url: '/api/v1/playlists/' + spotify_id,
       type: 'GET',
       success: function(response){
-        this.setState({playlist: response})
+        this.setState({ playlist: response })
+        this.setState({ tracks: response.tracks })
+        this.setState({ showPlaylist: !this.state.showPlaylist })
       }.bind(this)
     });
-    this.setState({
-      showPlaylist: !this.state.showPlaylist
-    })
   },
   getTrackHandler: function(playlist){
-    console.log({playlist});
   },
   render: function(){
     return(
@@ -38,6 +37,7 @@ var PlaylistCollection = React.createClass({
         {this.state.showPlaylist ? <SinglePlaylistBox
                                               playlist={this.state.playlist}
                                               getTrack={this.getTrackHandler}
+                                                 tracks={this.state.tracks}
                                     /> : null}
       </div>
     )
@@ -65,12 +65,22 @@ var AllPlaylists = React.createClass({
 
 var SinglePlaylistBox = React.createClass({
   render: function(){
-    return(
-      <div className="playlist-details">
-        <h3>{this.props.playlist.name}</h3>
-        <h5>{this.props.playlist.owner}</h5>
-        <button onClick={this.props.getTrack.bind(null, this.props)}>Analize this Playlist</button>
-      </div>
+    var track_list = this.props.tracks.map(function(track, index){
+      return(
+        <li key={track.id}>
+          {track.name} by: {track.artist}
+        </li>
+      );
+    }.bind(this));
+      return(
+        <div className="playlist-details">
+          <h3>{this.props.playlist.name}</h3>
+          <h5>{this.props.playlist.owner}</h5>
+          <ul>
+            {track_list}
+          </ul>
+          <button onClick={this.props.getTrack.bind(null, this.props)}>Analize this Playlist</button>
+        </div>
     );
   }
 });
