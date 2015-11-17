@@ -24,8 +24,10 @@ gem 'materialize-sass'
 
 gem "figaro"
 gem 'omniauth-twitter'
-
 gem 'rails_12factor'
+gem 'sidekiq'
+gem 'sinatra'
+gem 'foreman'
 
 group :development, :test do
   gem 'pry-rails'
