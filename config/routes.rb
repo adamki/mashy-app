@@ -1,4 +1,8 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web, at: '/sidekiq'
+
   root 'welcome#index'
   get '/auth/spotify', as: :login
   get '/auth/spotify/callback', to: 'sessions#create'
