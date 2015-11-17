@@ -1,5 +1,8 @@
 class Track < ActiveRecord::Base
   belongs_to :playlist
+
+  attr_reader :mock_response
+
   @mock_response = {"artist_id"=>"not found",
                    "artist_name"=>"not found",
                    "id"=>"not found",
@@ -27,7 +30,7 @@ class Track < ActiveRecord::Base
 
     echo_results = analyze(track_data.name, track_data.artists.first.name).first
     if echo_results == nil
-      echo_results = mock_response
+      echo_results = @mock_response
     end
     track.update_attributes(
       artist: track_data.artists.first.name,

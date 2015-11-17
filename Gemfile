@@ -21,6 +21,8 @@ gem 'faraday', '~> 0.9.2'
 
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'materialize-sass'
+gem 'c3-rails'
+gem 'd3_rails'
 
 gem "figaro"
 gem 'omniauth-twitter'
