@@ -3,8 +3,11 @@ class SessionsController < ApplicationController
     if user = User.from_omniauth(request.env["omniauth.auth"])
       session[:user_id] = user.id
       session[:auth_info] = request.env["omniauth.auth"]
+      
+      #CollectApiResponsesJob.perform_later
       @collection = PlaylistCollection.new(current_user, session[:auth_info])
-      CollectApiResponsesJob.perform_later
+      @collection.retreive_data
+      @collection.playlists
     end
     redirect_to playlists_path
   end
