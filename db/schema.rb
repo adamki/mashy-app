@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20151116040042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
 
   create_table "playlists", force: :cascade do |t|
     t.string   "user_id"
@@ -39,7 +38,7 @@ ActiveRecord::Schema.define(version: 20151116040042) do
     t.datetime "updated_at",                  null: false
     t.string   "href"
     t.string   "playlist_id"
-    t.hstore   "echo_response",  default: {}
+    t.json     "echo_response",  default: {}
   end
 
   create_table "users", force: :cascade do |t|

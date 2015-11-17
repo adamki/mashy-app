@@ -14,7 +14,7 @@ class EchonestService
       format: "json",
       results: "1"
     }
-    @song_connection.search(params)
+    @song_connection.search(params).as_json
   end
 
   private
