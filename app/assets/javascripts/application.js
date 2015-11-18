@@ -17,4 +17,6 @@
 //= require react
 //= require react_ujs
 //= require components
+//= require c3
+//= require d3
 //= require_tree .

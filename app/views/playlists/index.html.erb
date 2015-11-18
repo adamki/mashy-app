@@ -7,8 +7,10 @@
       Logged in as:  <%= current_user.name %>
     </div>
   </div>
-
-  <div class="row left">
-    <%= react_component "PlaylistCollection" %>
+  <div class="row">
+    <div class="col m6 left">
+      <%= react_component "PlaylistCollection" %>
+    </div>
+    <div id="chart" class="col m6"></div>
   </div>
 </body>
