@@ -2,7 +2,7 @@ var AudioSummary = React.createClass({
   render: function(){
   var audio_summary = this.props.audio_summary;
     return(
-      <div >
+      <div className="col m12 left">
         <ul>
           <li>Energy: {this.props.audio_summary.energy}</li>
           <li>Liveness: {this.props.audio_summary.liveness}</li>
@@ -16,10 +16,9 @@ var AudioSummary = React.createClass({
           <li>Loudness{this.props.audio_summary.loudness}</li>
           <li>audio_md5: {this.props.audio_summary.audio_md5}</li>
           <li>Valence: {this.props.audio_summary.valence}</li>
-          <li>Danceability: {this.props.audio_summary.danceability}</li>
+          <li>Danceability: {this.props.audio_summary.danceability}</li><br/>
         </ul>
       </div>
-
     );
   }
 });
