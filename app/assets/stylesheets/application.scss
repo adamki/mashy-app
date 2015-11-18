@@ -1,6 +1,5 @@
 @import "materialize/components/color";
 $primary-color: color("blue-grey", "darken-4") !default;
-
 $spotify-green: #82b919;
 $spotify-black: #000000;
 $spotify-dark-grey: #262626;
@@ -10,9 +9,12 @@ $spotify-orange: #ff6000;
 $spotify-red: #f25555;
 $spotify-yellow: #ebd411;
 
+
 @import 'materialize';
 @import 'background-image';
 @import "navbar";
+@import "c3";
+
 
 h1,h2, h3, h4, h5, h6, p,  .text-white {
   font-weight: 300;
@@ -66,4 +68,8 @@ nav {
   li > a{
     color: $spotify-green;
   }
+}
+
+a.collection-item {
+  background-color:orange;
 }
