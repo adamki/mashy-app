@@ -9,7 +9,6 @@ var PlaylistCollection = React.createClass({
           };
   },
   componentDidMount: function() {
-    console.log(this);
     $.ajax({
       url: '/api/v1/playlists/user.json',
       type: 'GET',
