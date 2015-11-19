@@ -1,7 +1,8 @@
 class PlaylistCollection
-  attr_accessor :playlists, :service
+  attr_accessor :playlists, :service, :user
 
   def initialize(user, auth_info)
+    @user = user
     @service = set_service(user, auth_info)
   end
 
@@ -10,13 +11,13 @@ class PlaylistCollection
   end
 
   def retreive_data
-    retreive_playlists
+    retreive_playlists(user)
     retreive_tracks
   end
 
-  def retreive_playlists
+  def retreive_playlists(user)
     @playlists = service.spotify_user.playlists
-    @playlists.each {|playlist| Playlist.save(playlist) }
+    @playlists.each {|playlist| Playlist.save(playlist, user) }
   end
 
   def retreive_tracks

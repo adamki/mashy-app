@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :playlists, defaults: { format: :json}, only: [:index, :show]
+      get "playlists/user" , to: "playlists#user"
+      resources :playlists, defaults: { format: :json}, only: [:index, :show,]
       resources :users, defaults: { format: :json}, only: [:index, :show]
       resources :tracks, defaults: { format: :json}, only: [:index, :show]
     end
